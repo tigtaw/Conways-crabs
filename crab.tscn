@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bml7nbuxd2t5v"]
+
+[ext_resource type="Script" uid="uid://k1d2xasacvh" path="res://scripts/crab.gd" id="1_14etv"]
+[ext_resource type="Texture2D" uid="uid://csh150ll5bro1" path="res://addons/at-icons/node2d/arrow_right.svg" id="1_grx3d"]
+[ext_resource type="Texture2D" uid="uid://x6mgn4srw1gv" path="res://addons/at-icons/mesh/circle.svg" id="1_wad7g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wydep"]
+radius = 6.0
+
+[node name="Crab" type="Area2D" unique_id=499641825]
+scale = Vector2(4, 4)
+script = ExtResource("1_14etv")
+
+[node name="BackgroundCircle" type="Sprite2D" parent="." unique_id=1845573938]
+texture = ExtResource("1_wad7g")
+
+[node name="DirectionArrow" type="Sprite2D" parent="." unique_id=236820777]
+texture = ExtResource("1_grx3d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=874263888]
+shape = SubResource("CircleShape2D_wydep")
+
+[node name="Down" type="RayCast2D" parent="." unique_id=1688361604]
+target_position = Vector2(0, 15)
+
+[node name="Left" type="RayCast2D" parent="." unique_id=469902257]
+rotation = 1.5707964
+target_position = Vector2(0, 15)
+
+[node name="Up" type="RayCast2D" parent="." unique_id=613468434]
+rotation = 3.1415927
+target_position = Vector2(0, 15)
+
+[node name="Right" type="RayCast2D" parent="." unique_id=535463809]
+rotation = -1.5707964
+target_position = Vector2(0, 15)
