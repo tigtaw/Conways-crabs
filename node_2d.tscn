@@ -2,42 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://bml7nbuxd2t5v" path="res://crab.tscn" id="1_wtcfe"]
 
-[sub_resource type="Animation" id="Animation_14etv"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_mm7dm"]
-resource_name = "step_forward_animation"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 0),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(64, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_wtcfe"]
-_data = {
-&"RESET": SubResource("Animation_14etv"),
-&"step_forward_animation": SubResource("Animation_mm7dm")
-}
-
 [node name="Node2D" type="Node2D" unique_id=26149290]
 
 [node name="Background" type="ColorRect" parent="." unique_id=1398971353]
@@ -50,6 +14,10 @@ offset_bottom = 326.0
 
 [node name="Crab" parent="." unique_id=499641825 instance=ExtResource("1_wtcfe")]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Crab" unique_id=1093876793]
-libraries/ = SubResource("AnimationLibrary_wtcfe")
-autoplay = &"step_forward_animation"
+[node name="Crab2" parent="." unique_id=1528642190 instance=ExtResource("1_wtcfe")]
+position = Vector2(192, -64)
+rotation = 3.1415927
+
+[node name="Crab3" parent="." unique_id=1356241127 instance=ExtResource("1_wtcfe")]
+position = Vector2(256, -64)
+rotation = 3.1415927

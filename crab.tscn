@@ -34,3 +34,14 @@ target_position = Vector2(0, 15)
 [node name="Right" type="RayCast2D" parent="." unique_id=535463809]
 rotation = -1.5707964
 target_position = Vector2(0, 15)
+
+[node name="WaitBeforeCheckingNeighbors" type="Timer" parent="." unique_id=16066046]
+one_shot = true
+autostart = true
+
+[node name="WaitBeforeMoving" type="Timer" parent="." unique_id=329300521]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="WaitBeforeCheckingNeighbors" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="WaitBeforeMoving" to="." method="_on_wait_before_moving_timeout"]
